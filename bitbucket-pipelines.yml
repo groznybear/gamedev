@@ -9,5 +9,5 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - g++ -O hello experiments/01_eclipse/src/main.cpp
-          - hello
+          - g++ -O pipeline/hello experiments/01_eclipse/src/main.cpp
+          - pipeline/hello
