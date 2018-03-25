@@ -22,8 +22,8 @@ pipelines:
           - cmake -configure experiments/02_make_lib/
           - cmake -generate experiments/02_make_lib/
           - make
-          - ./using_lib
-          - ./using_lib Daniil
-          - ./using_lib Alexey
-          - ./using_lib Leonid
-          - ./using_lib "Bad example"
+          - ./bin/using_lib
+          - ./bin/using_lib Daniil
+          - ./bin/using_lib Alexey
+          - ./bin/using_lib Leonid
+          - ./bin/using_lib "Bad example"
