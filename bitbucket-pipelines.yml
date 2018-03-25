@@ -11,8 +11,9 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - git clean -df
           - apt-get update
-          - apt-get install -y cmake
+          - apt-get install -y cmake@3.10
+          - cmake --version
           - cmake -configure experiments/01_eclipse/
           - cmake -generate experiments/01_eclipse/
           - make
-          - ./eclipse_first_run
+          - ./eclipse_first_run # name of CMake project inside of CMakeLists.txt
