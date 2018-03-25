@@ -19,5 +19,5 @@ int main(int argc, char* argv[])
         username = argv[1];
     }
 
-    return greetings(username);
+    return greetings(username) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
