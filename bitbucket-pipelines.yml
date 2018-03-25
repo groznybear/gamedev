@@ -9,5 +9,6 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
+        - cmake --version
           - g++ -o hello experiments/01_eclipse/src/main.cpp
           - ./hello
