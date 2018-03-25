@@ -26,4 +26,4 @@ pipelines:
           - ./bin/using_lib Daniil
           - ./bin/using_lib Alexey
           - ./bin/using_lib Leonid
-          - ./bin/using_lib "Bad example"
+          - ./bin/using_lib Bad example
