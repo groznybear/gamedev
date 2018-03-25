@@ -9,10 +9,21 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - git clean -df #
           - apt-get update # update repo indeces
           - apt-get install -y cmake # install cmake
+          
+          - git clean -df 
           - cmake -configure experiments/01_eclipse/ # configure project
           - cmake -generate experiments/01_eclipse/ # generate project
           - make # build generated project
           - ./eclipse_first_run # run build by name of CMake project inside of CMakeLists.txt
+          
+          - git clean -df
+          - cmake -configure experiments/02_make_lib/
+          - cmake -generate experiments/02_make_lib/
+          - make
+          - ./using_lib
+          - ./using_lib Daniil
+          - ./using_lib Alexey
+          - ./using_lib Leonid
+          - ./using_lib "Bad example"
