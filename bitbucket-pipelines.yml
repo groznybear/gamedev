@@ -9,5 +9,8 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - g++ -o hello experiments/01_eclipse/src/main.cpp
-          - ./hello
+          - git clean -df
+          - cmake -configure experiments/01_eclipse/
+          - cmake -generate experiments/01_eclipse/
+          - make
+          - ./01_eclipse
