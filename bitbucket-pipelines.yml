@@ -15,4 +15,4 @@ pipelines:
           - cmake -configure experiments/01_eclipse/
           - cmake -generate experiments/01_eclipse/
           - make
-          - ./01_eclipse
+          - ./eclipse_first_run
