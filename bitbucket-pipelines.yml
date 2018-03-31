@@ -13,8 +13,8 @@ pipelines:
           - apt-get install -y cmake # install cmake
           
           - git clean -df 
-          - cmake -configure experiments/01_eclipse/ # configure project
-          - cmake -generate experiments/01_eclipse/ # generate project
+          - cmake -configure experiments/01_01_eclipse/ # configure project
+          - cmake -generate experiments/01_01_eclipse/ # generate project
           - make # build generated project
           - ./eclipse_first_run # run build by name of CMake project inside of CMakeLists.txt
           
@@ -23,8 +23,8 @@ pipelines:
           - cd build
           - mkdir nolib
           - cd nolib
-          - cmake -configure ../../experiments/02_make_lib/
-          - cmake -generate ../../experiments/02_make_lib/
+          - cmake -configure ../../experiments/01_02_make_lib/
+          - cmake -generate ../../experiments/01_02_make_lib/
           - make
           - ./use_lib
           - ./use_lib Daniil
@@ -37,7 +37,7 @@ pipelines:
           - mkdir uselib
           - cd uselib
           - cmake -configure -DHELLOLIB=ON ../../experiments/02_make_lib
-          - cmake -generate ../../experiments/02_make_lib
+          - cmake -generate ../../experiments/01_02_make_lib
           - make
           - ./use_lib
           - ./use_lib Daniil
