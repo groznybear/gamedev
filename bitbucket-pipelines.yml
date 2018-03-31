@@ -26,7 +26,7 @@ pipelines:
             - cd nolib
             - cmake -configure ../../experiments/01_02_make_lib/
             - cmake -generate ../../experiments/01_02_make_lib/
-            - make
+            - make -j
             - ./use_lib
             - ./use_lib Daniil
             - ./use_lib Alexey
@@ -39,7 +39,7 @@ pipelines:
             - cd uselib
             - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
             - cmake -generate ../../experiments/01_02_make_lib
-            - make
+            - make -j
             - ./use_lib
             - ./use_lib Daniil
             - ./use_lib Alexey

@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 #ifdef HELLOLIB
 
     std::cout << "Lib was compiled, using Lib" << std::endl;
-    int exitCode = greetings(username) ? EXIT_SUCCESS : EXIT_FAILURE;
+    int exitCode = greetings(username.c_str()) ? EXIT_SUCCESS : EXIT_FAILURE;
 #else
     std::cout << "Lib was not compiled, using default" << std::endl;
     std::cout << "Hello, " << username << std::endl;
