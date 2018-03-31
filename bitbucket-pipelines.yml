@@ -36,7 +36,7 @@ pipelines:
           - cd ../
           - mkdir uselib
           - cd uselib
-          - cmake -configure -DHELLOLIB=ON ../../experiments/02_make_lib
+          - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
           - cmake -generate ../../experiments/01_02_make_lib
           - make
           - ./use_lib
