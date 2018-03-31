@@ -4,8 +4,8 @@
  *  Created on: 25 мар. 2018 г.
  *      Author: groznybear
  */
-#include "mainconfig.hpp"
 
+#include "mainconfig.hpp"
 #ifdef HELLOLIB
 #include "lib.hpp"
 #endif
