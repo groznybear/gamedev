@@ -7,7 +7,7 @@ This project mostly writen on C++.
 - CMake@3.7
 
 # Quick Start
-### OS X
+#### OS X
 Using Terminal window, perform nest commands:
 >	- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 >	- brew update
@@ -20,13 +20,13 @@ Ensure everything is installed:
 >	- cmake --version
 >	- make --version
 
-### Windows
+#### Windows
 Comming soon...
 
-### Linux
+#### Linux
 Comming soon...
 
 # Tools
-[Eclipse C+](http://www.eclipse.org/downloads/)
-[SDL](https://www.libsdl.org/)
-[Installation README](https://bitbucket.org/GroznyBear/gamedev/src//tools/?at=master)
+- [Eclipse C+](http://www.eclipse.org/downloads/)
+- [SDL](https://www.libsdl.org/)
+- [Installation README](https://bitbucket.org/GroznyBear/gamedev/src//tools/?at=master)
