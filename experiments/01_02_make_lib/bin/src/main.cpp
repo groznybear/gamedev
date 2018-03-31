@@ -33,6 +33,6 @@ int main(int argc, char* argv[])
     int exitCode = std::cout.good() ? EXIT_SUCCESS : EXIT_FAILURE;
 #endif
 
-    std::cout << "Program exit with code: " << exitCode << std::endl;
+    std::cout << "Program exited with code: " << exitCode << std::endl;
     return exitCode;
 }

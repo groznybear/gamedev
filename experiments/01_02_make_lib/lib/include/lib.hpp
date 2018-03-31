@@ -1,1 +1,1 @@
-extern bool greetings(const char* str);
+extern bool greetings(const char* str[]);
