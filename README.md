@@ -1,4 +1,4 @@
-[![build-status](https://pipelines-badges-service.useast.staging.atlassian.io/badge/atlassian/gamedev.svg)](https://img.shields.io/bitbucket/pipelines/groznybear/gamedev.svg)
+[![build-status](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)
 
  
 
