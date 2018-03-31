@@ -1,4 +1,4 @@
-[![build-status](https://pipelines-badges-service.useast.staging.atlassian.io/badge/atlassian/gamedev.svg)](https://bitbucket.org/atlassian/gamedev/addon/pipelines/home)  [![Coverage Status](https://coveralls.io/repos/bitbucket/atlassian/gamedev/badge.svg?branch=master)](https://coveralls.io/bitbucket/atlassian/gamedev?branch=master)
+[![build-status](https://pipelines-badges-service.useast.staging.atlassian.io/badge/atlassian/gamedev.svg)](https://img.shields.io/bitbucket/pipelines/groznybear/gamedev.svg)
 
  
 
