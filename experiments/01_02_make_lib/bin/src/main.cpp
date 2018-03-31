@@ -14,6 +14,7 @@
 int main(int argc, char* argv[])
 {
     std::cout << "VERSION: " << use_lib_VERSION_MAJOR << "." << use_lib_VERSION_MINOR << std::endl;
+    std::cout << "PLATFORM: " << use_lib_PLATFORM << std::endl;
     // default world to use to greeting the user, if name wasn't specified
     std::string username = "stranger";
 

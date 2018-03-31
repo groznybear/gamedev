@@ -4,13 +4,23 @@ project(use_lib)
 
 # The version number
 set(use_lib_VERSION_MAJOR 1)
-set(use_lib_VERSION_MINOR 0)
+set(use_lib_VERSION_MINOR 1)
+
+if(APPLE)
+set(use_lib_PLATFORM "OS X")
+elseif(UNIX)
+set(use_lib_PLATFORM "LINUX")
+elseif(WIN32)
+set(use_lib_PLATFORM "WIN32")
+endif(APPLE)
+
+
 
 # add the binary tree to the search path for include files
 # so that we will find main.h
 include_directories("${PROJECT_BINARY_DIR}")
 
-option (HELLOLIB "Use separate lib for greetings" OFF)
+option (HELLOLIB "Use separate lib for greetings" ON)
 
 # add the hello lib library?
 if (HELLOLIB)

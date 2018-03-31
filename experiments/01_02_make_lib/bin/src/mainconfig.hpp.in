@@ -1,3 +1,4 @@
 #define use_lib_VERSION_MAJOR @use_lib_VERSION_MAJOR@
 #define use_lib_VERSION_MINOR @use_lib_VERSION_MINOR@
+#define use_lib_PLATFORM "@use_lib_PLATFORM@"
 #cmakedefine HELLOLIB
