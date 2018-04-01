@@ -29,7 +29,7 @@ I will install the next tools:
 > - gdb
 
 ##### MacOS
-**CMAKE**
+**CMake**
 > - Go to **Preferences > C/C++ > Environment**;
 > - Click **Add**;
 > - Set "Name" to **PATH**;
