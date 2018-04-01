@@ -51,6 +51,7 @@ See **clang-format --help** for more information.
 
 In terminal:
 > brew install gdb
+>
 > echo "set startup-with-shell off" >> ~/.gdbinit
 
 [Further instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
