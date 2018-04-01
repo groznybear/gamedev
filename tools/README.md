@@ -88,8 +88,8 @@ Inside Eclipse:
  - After that installed, open **Debug Configuration** window and create new configuration;
  - At the bottom of the window, **Select other...** and check **Use configuration specific settings**;
  - Select **LLDB-MI Debug Process Launcher** > press **Ok**;
- - Then, navigate to **Debugger** tab, and make sure that **LLDB Command** field filled properly
- 	That might require full path to _lldb-mi_ to be specified (/Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi);
+ - Then, navigate to **Debugger** tab, and make sure that **LLDB Command** field filled properly;
+   That might require full path to _lldb-mi_ to be specified (/Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi);
  - Start debugging with that configuration;
  
  That's it, everything should work. LLDB has limited support with Eclipse, [check limitations](http://wiki.eclipse.org/CDT/User/FAQ#What_are_the_limitations_of_using_the_LLDB_debugger_in_Eclipse.3F)
