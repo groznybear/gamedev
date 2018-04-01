@@ -78,8 +78,22 @@ Make sure that you installed the Xcode CommandLineTools by doing in Terminal:
 If it shows something like
 > xcode-select: error: command line tools are already installed, use "Software Update" to install updates
 
-Check _LLDB - XCode Fix_ section below
+Check _LLDB - XCode Fix_ section below;
 
+Inside Eclipse:
+
+ - open **Help > Install New Software...** window;
+ - **Work with:** set to something like _CDT - http://download.eclipse.org/tools/cdt/releases/9.4/_;
+ - Install **CDT - Optional Features > C/C++ LLDB Debugger Integration (experimental)**;
+ - After that installed, open **Debug Configuration** window and create new configuration;
+ - At the bottom of the window, **Select other...** and check **Use configuration specific settings**;
+ - Select **LLDB-MI Debug Process Launcher** > press **Ok**;
+ - Then, navigate to **Debugger** tab, and make sure that **LLDB Command** field filled properly
+ 	That might require full path to _lldb-mi_ to be specified (/Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi);
+ - Start debugging with that configuration;
+ 
+ That's it, everything should work. LLDB has limited support with Eclipse, [check limitations](http://wiki.eclipse.org/CDT/User/FAQ#What_are_the_limitations_of_using_the_LLDB_debugger_in_Eclipse.3F)
+ 
 ###### LLDB - XCode Fix
 > xcode-select --install
 >
