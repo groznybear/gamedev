@@ -62,7 +62,7 @@ In terminal:
 **NOTE:**
 > The scope of course covers the working with GDB debugger, **BUT** the reality is cruel ;-(...
 >
-> For MacOS Sierra (10.12) and higher, GDB debugger almost unuseful [(source)](http://wiki.eclipse.org/CDT/User/FAQ#How_do_I_use_GDB_on_recent_versions_of_macOS.3F),
+> For MacOS Sierra (10.12) and higher, GDB debugger almost unusable [(source)](http://wiki.eclipse.org/CDT/User/FAQ#How_do_I_use_GDB_on_recent_versions_of_macOS.3F),
 >
 > I will switch to **LLDB** debugger, which has an experimental support in Eclipse.
 >
