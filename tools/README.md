@@ -23,9 +23,12 @@ Coming soon...
 ### Setting up IDE and installing extra tools
 The set up process is similar for every platform, but _tools' istallation_ process might differ between different OS.
 
-I will install the next tools:
+I will install and setup the next tools:
+> - CMake
 > - clang-format
 > - cppstyle
+> - cppcheck
+> - debugger
 
 ##### MacOS
 **CMake**
@@ -65,6 +68,13 @@ In terminal:
 >
 > Instructions will be added after I make it work on my machine.
 
+**CppCheck**
+
+In terminal:
+> brew install cppcheck
+
+In Eclipse:
+**TO BE ADDED**
 
 ##### Universal part
 **Code Style and auto-format**
