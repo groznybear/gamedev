@@ -36,6 +36,7 @@ I will install the next tools:
 > - Click **Ok**;
 
 **Code style and auto-format**
+
 In terminal:
 > brew install clang-format
 
