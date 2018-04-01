@@ -14,3 +14,18 @@ But also you might want to specify the exact version, you can do it like this:
 
 After that, install **Eclipse**:
 > brew cask install eclipse-cpp
+
+##### Windows
+Coming soon...
+##### Linux
+Coming soon...
+
+### Setting up IDE and installing extra tools
+The set up process is similar for every platform, but _tools' istallation_ process might differ between different OS.
+
+I will install the next tools:
+> - gdb - Debugger
+> - clang-format - Auto-formatting tool
+> - cppstyle - Code stylizer
+
+##### MacOS
