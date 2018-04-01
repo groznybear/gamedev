@@ -4,10 +4,14 @@ project(sdllib)
 add_executable(${PROJECT_NAME} bin/src/main.cpp)
 
 if(APPLE)
-find_library(SDL2_LIB libSDL2.dylib HINTS "/WORK/itacademy/custom/lib")
-elseif(UNIX)
-find_library(SDL2_LIB libSDL2.so)
-endif()
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+find_library(SDL2_LIB libSDL2d.dylib)
+endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+
+#if(CMAKE_BUILD_TYPE STREQUAL "Release")
+#find_library(SDL2_LIB SDL2)
+#endif(CMAKE_BUILD_TYPE STREQUAL "Release")
+endif(APPLE)
 
 if(NOT SDL2_LIB)
   message(FATAL_ERROR "SDL2 library not found")
