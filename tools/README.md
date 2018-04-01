@@ -49,7 +49,10 @@ In terminal:
 Next, in Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
 
 After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
-select your _.clang-format_ file in **Clang-format path** field.
+select your _clang-format_ installation path in **Clang-format path** field.
+
+You can find it by typing in terminal:
+> which clang-format
 
 You might want to tick **Run clang-format on file save**.
 
