@@ -24,11 +24,12 @@ Coming soon...
 The set up process is similar for every platform, but _tools' istallation_ process might differ between different OS.
 
 I will install the next tools:
-> - gdb - Debugger
-> - clang-format - Auto-formatting tool
-> - cppstyle - Code stylizer
+> - clang-format
+> - cppstyle
+> - gdb
 
 ##### MacOS
+**Code style and auto-format**
 In terminal:
 > brew install clang-format
 
@@ -39,10 +40,17 @@ so every **.cpp** file will use the same format.
 
 See **clang-format --help** for more information.
 
+**Debugger**
+In terminal:
+> brew install gdb
+> echo "set startup-with-shell off" >> ~/.gdbinit
+
 ##### Universal part
 Next, in Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
+
 After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
 select your _.clang-format_ file in **Clang-format path** field.
+
 You might want to tick **Run clang-format on file save**.
 
 Than, switch to **Code Style > Formatter** tab, and change **Code Formatter** option to **CppStyle (clang-format)**.
