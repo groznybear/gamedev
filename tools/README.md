@@ -26,7 +26,6 @@ The set up process is similar for every platform, but _tools' istallation_ proce
 I will install the next tools:
 > - clang-format
 > - cppstyle
-> - gdb
 
 ##### MacOS
 **CMake**
@@ -48,13 +47,19 @@ so every **.cpp** file will use the same format.
 See **clang-format --help** for more information.
 
 **Debugger**
-
 In terminal:
 > brew install gdb
 >
 > echo "set startup-with-shell off" >> ~/.gdbinit
 
 [Further instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
+
+**NOTE:**
+> The scope of course covers the working with GDB debugger, **BUT** the reality is cruel ;-(...
+> For MacOS Sierra (10.12) and higher, GDB debugger almost unuseful [(source)](http://wiki.eclipse.org/CDT/User/FAQ#How_do_I_use_GDB_on_recent_versions_of_macOS.3F),
+> I will switch to **LLDB** debugger, which has an experimental support in Eclipse.
+> Instructions will be added later.
+
 
 ##### Universal part
 **Code Style and auto-format**
