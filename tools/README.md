@@ -30,11 +30,11 @@ I will install the next tools:
 
 ##### MacOS
 **CMAKE**
-0 Go to **Preferences > C/C++ > Environment**
-1 Click **Add**
-2 Name **PATH**
-3 Value **/usr/local/bin**
-4 Click **Ok**
+> - Go to **Preferences > C/C++ > Environment**;
+> - Click **Add**;
+> - Set "Name" to **PATH**;
+> - Set "Value" **/usr/local/bin**;
+> - Click **Ok**;
 
 **Code style and auto-format**
 In terminal:
