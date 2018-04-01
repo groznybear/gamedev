@@ -30,9 +30,9 @@ I will install the next tools:
 
 ##### MacOS
 In terminal:
->  brew install clang-format
->
-> - clang-format -style=WebKit -dump-config > **<your-project-root-directory>**/.clang-format
+> brew install clang-format
+
+> clang-format -style=WebKit -dump-config > **<your-project-root-directory>**/.clang-format
 
 The second line will produce the hidden file at root level of your project directory,
 so every **.cpp** file will use the same format.
