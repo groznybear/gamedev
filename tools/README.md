@@ -82,7 +82,9 @@ Check _LLDB - XCode Fix_ section below
 
 ###### LLDB - XCode Fix
 > xcode-select --install
+>
 > sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+>
 > xcodebuild --version
 
 **CppCheck**
