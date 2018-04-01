@@ -69,20 +69,21 @@ In terminal:
 > Instructions will be added after I make it work on my machine.
 
 ###### LLDB
-> - Install Xcode;
-> - Make sure that you installed the Xcode CommandLineTools by doing in Terminal:
->	xcodebuild --version
->	if it shows something like
-		xcode-select: error: command line tools are already installed, use "Software Update" to install updates
-	Check _LLDB - XCode Fix_ section below
->
+> - Install Xcode
 
+Make sure that you installed the Xcode CommandLineTools by doing in Terminal:
+
+>	xcodebuild --version
+
+If it shows something like
+> xcode-select: error: command line tools are already installed, use "Software Update" to install updates
+
+Check _LLDB - XCode Fix_ section below
 
 ###### LLDB - XCode Fix
 > xcode-select --install
 > sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 > xcodebuild --version
-
 
 **CppCheck**
 
