@@ -2,19 +2,10 @@
 cmake_minimum_required(VERSION 3.7)
 project(use_lib)
 
-# The version number
+# Set info
 set(use_lib_VERSION_MAJOR 1)
-set(use_lib_VERSION_MINOR 1)
-
-if(APPLE)
-set(use_lib_PLATFORM "OS X")
-elseif(UNIX)
-set(use_lib_PLATFORM "LINUX")
-elseif(WIN32)
-set(use_lib_PLATFORM "WIN32")
-endif(APPLE)
-
-
+set(use_lib_VERSION_MINOR 2)
+set(use_lib_PLATFORM ${CMAKE_SYSTEM_NAME})
 
 # add the binary tree to the search path for include files
 # so that we will find main.h
