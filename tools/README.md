@@ -31,3 +31,17 @@ I will install the next tools:
 ##### MacOS
 In terminal:
 > brew install clang-format
+> clang-format -style=WebKit -dump-config > **<your-project-root-directory>**/.clang-format
+
+The second line will produce the hidden file at root level of your project directory,
+so every **.cpp** file will use the same format.
+
+See **clang-format --help** for more information.
+
+##### Universal part
+Next, in Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
+After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
+select your _.clang-format_ file in **Clang-format path** field.
+You might want to tick **Run clang-format on file save**.
+
+Than, switch to **Code Style > Formatter** tab, and change **Code Formatter** option to **CppStyle (clang-format)**.
