@@ -29,6 +29,13 @@ I will install the next tools:
 > - gdb
 
 ##### MacOS
+**CMAKE**
+- Go to **Preferences > C/C++ > Environment**
+- Click **Add**
+- Name **PATH**
+- Value **/usr/local/bin**
+- Click **Ok**
+
 **Code style and auto-format**
 In terminal:
 > brew install clang-format
@@ -46,7 +53,8 @@ In terminal:
 > echo "set startup-with-shell off" >> ~/.gdbinit
 
 ##### Universal part
-Next, in Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
+**Code Style and auto-format**
+In Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
 
 After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
 select your _clang-format_ installation path in **Clang-format path** field.
