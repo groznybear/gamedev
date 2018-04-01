@@ -48,6 +48,7 @@ so every **.cpp** file will use the same format.
 See **clang-format --help** for more information.
 
 **Debugger**
+
 In terminal:
 > brew install gdb
 >
@@ -67,6 +68,7 @@ In terminal:
 
 ##### Universal part
 **Code Style and auto-format**
+
 In Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
 
 After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
