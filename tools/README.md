@@ -48,11 +48,12 @@ so every **.cpp** file will use the same format.
 See **clang-format --help** for more information.
 
 **Debugger**
+
 In terminal:
 > brew install gdb
 > echo "set startup-with-shell off" >> ~/.gdbinit
 
-[Further instructions:](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
+[Further instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
 
 ##### Universal part
 **Code Style and auto-format**
