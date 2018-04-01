@@ -52,6 +52,8 @@ In terminal:
 > brew install gdb
 > echo "set startup-with-shell off" >> ~/.gdbinit
 
+[Further instructions:](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
+
 ##### Universal part
 **Code Style and auto-format**
 In Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
