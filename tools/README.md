@@ -29,3 +29,5 @@ I will install the next tools:
 > - cppstyle - Code stylizer
 
 ##### MacOS
+In terminal:
+> brew install clang-format
