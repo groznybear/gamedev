@@ -14,7 +14,7 @@ endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif(APPLE)
 
 if(NOT SDL2_LIB)
-  message(FATAL_ERROR "SDL2 library not found")
+  message(STATUS "SDL2 library not found")
 else()
   message(STATUS "SDL2 found at: ${SDL2_LIB}")
   target_link_libraries(${PROJECT_NAME} ${SDL2_LIB})
