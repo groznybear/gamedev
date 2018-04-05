@@ -23,10 +23,12 @@ Coming soon...
 ### Setting up IDE and installing extra tools
 The set up process is similar for every platform, but _tools' istallation_ process might differ between different OS.
 
-I will install the next tools:
+I will install and setup the next tools:
+> - CMake
 > - clang-format
 > - cppstyle
-> - gdb
+> - cppcheck
+> - debugger
 
 ##### MacOS
 **CMake**
@@ -37,6 +39,7 @@ I will install the next tools:
 > - Click **Ok**;
 
 **Code style and auto-format**
+
 In terminal:
 > brew install clang-format
 
@@ -48,7 +51,7 @@ so every **.cpp** file will use the same format.
 See **clang-format --help** for more information.
 
 **Debugger**
-
+###### GDB
 In terminal:
 > brew install gdb
 >
@@ -56,8 +59,60 @@ In terminal:
 
 [Further instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin)
 
+**NOTE:**
+> The scope of course covers the working with GDB debugger, **BUT** the reality is cruel ;-(...
+>
+> For MacOS Sierra (10.12) and higher, GDB debugger almost unusable [(source)](http://wiki.eclipse.org/CDT/User/FAQ#How_do_I_use_GDB_on_recent_versions_of_macOS.3F),
+>
+> I will switch to **LLDB** debugger, which has an experimental support in Eclipse.
+>
+> Instructions will be added after I make it work on my machine.
+
+###### LLDB
+> - Install Xcode
+
+Make sure that you installed the Xcode CommandLineTools by doing in Terminal:
+
+>	xcodebuild --version
+
+If it shows something like
+> xcode-select: error: command line tools are already installed, use "Software Update" to install updates
+
+Check _LLDB - XCode Fix_ section below;
+
+Inside Eclipse:
+
+ - open **Help > Install New Software...** window;
+ - **Work with:** set to something like _CDT - http://download.eclipse.org/tools/cdt/releases/9.4/_;
+ - Install **CDT - Optional Features > C/C++ LLDB Debugger Integration (experimental)**;
+ - After that installed, open **Debug Configuration** window and create new configuration;
+ - At the bottom of the window, **Select other...** and check **Use configuration specific settings**;
+ - Select **LLDB-MI Debug Process Launcher** > press **Ok**;
+ - Then, navigate to **Debugger** tab, and make sure that **LLDB Command** field filled properly;
+>   That might require full path to _lldb-mi_ to be specified (/Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi);
+ - Start debugging with that configuration;
+ 
+ That's it, everything should work. LLDB has limited support with Eclipse, [check limitations](http://wiki.eclipse.org/CDT/User/FAQ#What_are_the_limitations_of_using_the_LLDB_debugger_in_Eclipse.3F)
+ 
+###### LLDB - XCode Fix
+> xcode-select --install
+>
+> sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+>
+> xcodebuild --version
+
+**CppCheck**
+
+In terminal:
+> brew install cppcheck
+
+In Eclipse:
+
+**TO BE ADDED MODE DETAILS**
+
 ##### Universal part
 **Code Style and auto-format**
+
 In Eclipse, go to **Help > Eclipse Marketplace** and search for _CppStyle_ by _Zhanwei Wang_, install it.
 
 After Eclipse restart, go to **Preferences > C/C++ > CppStyle**,
