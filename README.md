@@ -1,5 +1,5 @@
 [![build-status](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)
-
+[![Build Status](https://travis-ci.org/groznybear/gamedev.svg?branch=master)](https://travis-ci.org/groznybear/gamedev)
  
 
 # GameDev Course
