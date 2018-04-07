@@ -3,13 +3,15 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: gcc:7.2
+#image: gcc:7.2
+image: rikorose/gcc-cmake
 
 pipelines:
   custom: # Let's make it runs manually only...
     manual:
       - step:
           script: # Modify the commands below to build your repository.
+            - brew --version
             - apt-get update # update repo indeces
             - apt-get install -y cmake # install cmake
           
