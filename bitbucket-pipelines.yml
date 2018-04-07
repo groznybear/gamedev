@@ -45,6 +45,5 @@ pipelines:
             - ./use_lib Alexey
             - ./use_lib Leonid
             - ./use_lib Bad example
-            - cd ../
-            - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"uselib/use_lib"
+            - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
             - git clean -df
