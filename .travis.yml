@@ -4,7 +4,11 @@ os: osx
 osx_image: xcode9.3beta
 compiler: gcc
 before_install:
- - brew update && brew bundle
+ - brew update
 install:
  - brew install cmake
-script: true
+script:
+ - cmake -configure experiments/01_01_eclipse/  # configure project
+ - cmake -generate experiments/01_01_eclipse/   # generate project
+ - make                                         # build generated project
+ - ./eclipse_first_run                          # run
