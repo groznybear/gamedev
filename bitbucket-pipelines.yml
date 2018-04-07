@@ -7,7 +7,7 @@ pipelines:
           script:
             - apt-get update # update repo indeces
             - apt-get install -y cmake # install cmake
-            - apt-get install sdl2
+            - apt-get install -y libsdl2
             
             - git clean -df
             - mkdir build && cd build
