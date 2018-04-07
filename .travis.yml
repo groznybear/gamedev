@@ -24,9 +24,6 @@ script:
  - make -j 4
  - ./use_lib
  - ./use_lib Daniil
- - ./use_lib Alexey
- - ./use_lib Leonid
- - ./use_lib Bad example
           
  - git clean -df
  - cd ../
@@ -34,12 +31,8 @@ script:
  - cd uselib
  - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
  - cmake -generate ../../experiments/01_02_make_lib
- - make -j
- - ls
+ - make -j 4
  - ./use_lib
  - ./use_lib Daniil
- - ./use_lib Alexey
- - ./use_lib Leonid
- - ./use_lib Bad example
  - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
  - git clean -df

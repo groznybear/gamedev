@@ -11,7 +11,7 @@ set(use_lib_PLATFORM ${CMAKE_SYSTEM_NAME})
 # so that we will find main.h
 include_directories("${PROJECT_BINARY_DIR}")
 
-option (HELLOLIB "Use separate lib for greetings" ON)
+option (HELLOLIB "Use separate lib for greetings" OFF)
 
 # add the hello lib library?
 if (HELLOLIB)
