@@ -4,7 +4,7 @@
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
 #image: gcc:7.2
-image: rikorose/gcc-cmake
+image: mainto/kvm-mac
 
 pipelines:
   custom: # Let's make it runs manually only...
