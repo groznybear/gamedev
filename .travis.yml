@@ -10,11 +10,12 @@ install:
  - brew install sdl2 # for some reasons, I have the issues with linking with SDL2's dylib that built from source, so install it from Homebrew
 script:
  - git clean -df
+ 
  - mkdir build && cd build
  - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_01_main_loop
  - make -j 4
  - ./mainloop_osx 1 # pass the parameter to force-escape from the main game loop
- after_success:
+after_success:
  - chmod +x $TRAVIS_TEST_RESULT
  - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./${TRAVIS_TEST_RESULT}" # upload
  
