@@ -5,10 +5,40 @@ osx_image: xcode9.3beta
 compiler: gcc
 before_install:
  - brew update
-install:
- - brew install cmake
+ - brew upgrade cmake
+install: true 
 script:
+ - git clean -df 
  - cmake -configure experiments/01_01_eclipse/  # configure project
  - cmake -generate experiments/01_01_eclipse/   # generate project
  - make                                         # build generated project
  - ./eclipse_first_run                          # run
+ 
+ - git clean -df
+ - mkdir build
+ - cd build
+ - mkdir nolib
+ - cd nolib
+ - cmake -configure ../../experiments/01_02_make_lib/
+ - cmake -generate ../../experiments/01_02_make_lib/
+ - make -j 4
+ - ./use_lib
+ - ./use_lib Daniil
+ - ./use_lib Alexey
+ - ./use_lib Leonid
+ - ./use_lib Bad example
+          
+ - git clean -df
+ - cd ../
+ - mkdir uselib
+ - cd uselib
+ - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
+ - cmake -generate ../../experiments/01_02_make_lib
+ - make -j
+ - ./use_lib
+ - ./use_lib Daniil
+ - ./use_lib Alexey
+ - ./use_lib Leonid
+ - ./use_lib Bad example
+ 
+ - git clean -df
