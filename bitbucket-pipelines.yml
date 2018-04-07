@@ -11,7 +11,6 @@ pipelines:
     manual:
       - step:
           script: # Modify the commands below to build your repository.
-            - brew --version
             - apt-get update # update repo indeces
             - apt-get install -y cmake # install cmake
           
