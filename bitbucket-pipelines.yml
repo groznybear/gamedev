@@ -1,49 +1,20 @@
-# This is a sample build configuration for C++ � Make.
-# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
 image: gcc:7.2
 
 pipelines:
   custom: # Let's make it runs manually only...
     manual:
       - step:
-          script: # Modify the commands below to build your repository.
+          script:
             - apt-get update # update repo indeces
             - apt-get install -y cmake # install cmake
-
-            - git clean -df 
-            - cmake -configure experiments/01_01_eclipse/ # configure project
-            - cmake -generate experiments/01_01_eclipse/ # generate project
-            - make # build generated project
-            - ./eclipse_first_run # run build by name of CMake project inside of CMakeLists.txt
-          
+            - apt-get install sdl2
+            
             - git clean -df
-            - mkdir build
-            - cd build
-            - mkdir nolib
-            - cd nolib
-            - cmake -configure ../../experiments/01_02_make_lib/
-            - cmake -generate ../../experiments/01_02_make_lib/
-            - make -j
-            - ./use_lib
-            - ./use_lib Daniil
-            - ./use_lib Alexey
-            - ./use_lib Leonid
-            - ./use_lib Bad example
-          
-            - git clean -df
-            - cd ../
-            - mkdir uselib
-            - cd uselib
-            - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
-            - cmake -generate ../../experiments/01_02_make_lib
-            - make -j
-            - ./use_lib
-            - ./use_lib Daniil
-            - ./use_lib Alexey
-            - ./use_lib Leonid
-            - ./use_lib Bad example
-            - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
+            - mkdir build && cd build
+            - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_01_main_loop
+            - make -j 4
+            - chmod a+x ./mainloop_linux
+            - ./mainloop_linux 1 # pass the parameter to force-escape from the main game loop
+            - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./mainloop_linux" # upload
+ 
             - git clean -df

@@ -6,36 +6,15 @@ compiler: gcc
 before_install:
 # - brew update # takes alot of time =(
  - brew upgrade cmake
-install: true 
+install:
+ - brew install sdl2 # for some reasons, I have the issues with linking with SDL2's dylib that built from source, so install it from Homebrew
 script:
- - git clean -df 
- - cmake -configure experiments/01_01_eclipse/  # configure project
- - cmake -generate experiments/01_01_eclipse/   # generate project
- - make                                         # build generated project
- - ./eclipse_first_run                          # run
- 
  - git clean -df
- - mkdir build
- - cd build
- - mkdir nolib
- - cd nolib
- - cmake -configure ../../experiments/01_02_make_lib/
- - cmake -generate ../../experiments/01_02_make_lib/
+ - mkdir build && cd build
+ - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_01_main_loop
  - make -j 4
- - chmod a+x ./use_lib
- - ./use_lib
- - ./use_lib Daniil
- - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
-          
- - git clean -df
- - cd ../
- - mkdir uselib
- - cd uselib
- - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
- - cmake -generate ../../experiments/01_02_make_lib
- - make -j 4
- - chmod a+x ./use_lib
- - ./use_lib
- - ./use_lib Daniil
+ - chmod a+x ./mainloop_osx
+ - ./mainloop_osx 1 # pass the parameter to force-escape from the main game loop
+ - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./mainloop_osx" # upload
  
  - git clean -df

@@ -53,7 +53,7 @@ void check_input(const SDL_Event& e)
     }
 }
 
-int main()
+int main(int argc, char* /*argv*/ [])
 {
     using namespace std;
     SDL_version compiled = { 0, 0, 0 };
@@ -61,8 +61,8 @@ int main()
 
     SDL_VERSION(&compiled);
     SDL_GetVersion(&linked);
-    cout << compiled << endl;
-    cout << linked << endl;
+    cout << "SDL compiled version: " << compiled << endl;
+    cout << "SDL linked version: " << linked << endl;
 
     if (SDL_COMPILEDVERSION != SDL_VERSIONNUM(linked.major, linked.minor, linked.patch)) {
         cerr << "[Warning: SDL2 compiled and linked version mismatch: "
@@ -104,6 +104,10 @@ int main()
             default:
                 break;
             }
+        }
+        if (argc > 1) {
+            continue_loop = false;
+            cout << "CI/CD build. Escape the loop." << endl;
         }
     }
 
