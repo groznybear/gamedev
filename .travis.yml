@@ -35,6 +35,7 @@ script:
  - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
  - cmake -generate ../../experiments/01_02_make_lib
  - make -j
+ - ls
  - ./use_lib
  - ./use_lib Daniil
  - ./use_lib Alexey
