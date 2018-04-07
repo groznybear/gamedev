@@ -12,7 +12,7 @@ pipelines:
           script: # Modify the commands below to build your repository.
             - apt-get update # update repo indeces
             - apt-get install -y cmake # install cmake
-          
+
             - git clean -df 
             - cmake -configure experiments/01_01_eclipse/ # configure project
             - cmake -generate experiments/01_01_eclipse/ # generate project
