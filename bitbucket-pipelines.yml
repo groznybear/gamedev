@@ -14,7 +14,7 @@ pipelines:
             - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_01_main_loop
             - make -j 4
             - ./mainloop_linux 1 # pass the parameter to force-escape from the main game loop
-            - chmod a+x ./mainloop_linux
+            - chmod a+x mainloop_linux
             - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./mainloop_linux" # upload
  
             - git clean -df
