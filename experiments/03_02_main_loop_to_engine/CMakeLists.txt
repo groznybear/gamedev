@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.7)
+if(APPLE)
+project(microengine_osx)
+elseif(UNIX)
+project(microengine_linux)
+elseif(WIN32)
+project(microengine_win32)
+endif()
+
+add_executable(${PROJECT_NAME} main.cpp engine.hpp engine.cpp)
+
+set(CMAKE_CXX_FLAGS "-std=c++17")
+if(APPLE)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+find_library(SDL2LIB libSDL2d.dylib)
+else()
+find_library(SDL2LIB libSDL2.dylib)
+endif()
+
+target_link_libraries(${PROJECT_NAME} ${SDL2LIB})
+endif(APPLE)
