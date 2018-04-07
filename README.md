@@ -1,4 +1,4 @@
-**Bitbucket Pipelines (Linux)**: [![build-status](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg)
+**Bitbucket Pipelines (Linux)**: [![build-status](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev.svg?branch=master)](https://img.shields.io/bitbucket/pipelines/GroznyBear/gamedev)
 
 **Travis CI (OSX)**: [![Build Status](https://travis-ci.org/groznybear/gamedev.svg?branch=master)](https://travis-ci.org/groznybear/gamedev)
  
