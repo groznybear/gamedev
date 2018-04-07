@@ -4,7 +4,7 @@ os: osx
 osx_image: xcode9.3beta
 compiler: gcc
 before_install:
- - brew update
+# - brew update # takes alot of time =(
  - brew upgrade cmake
 install: true 
 script:
@@ -22,8 +22,10 @@ script:
  - cmake -configure ../../experiments/01_02_make_lib/
  - cmake -generate ../../experiments/01_02_make_lib/
  - make -j 4
+ - chmod a+x ./use_lib
  - ./use_lib
  - ./use_lib Daniil
+ - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
           
  - git clean -df
  - cd ../
@@ -32,7 +34,8 @@ script:
  - cmake -configure -DHELLOLIB=ON ../../experiments/01_02_make_lib
  - cmake -generate ../../experiments/01_02_make_lib
  - make -j 4
+ - chmod a+x ./use_lib
  - ./use_lib
  - ./use_lib Daniil
- - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./use_lib"
+ 
  - git clean -df
