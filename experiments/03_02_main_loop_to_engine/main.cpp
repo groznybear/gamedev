@@ -37,10 +37,10 @@ int main(int argc)
             default:
                 break;
             }
-            if (argc > 1) {
-                std::cout << "CI/CD build. Force escape from main loop." << std::endl;
-                continue_loop = false;
-            }
+        }
+        if (argc > 1) {
+            std::cout << "CI/CD build. Force escape from main loop." << std::endl;
+            continue_loop = false;
         }
     }
 
