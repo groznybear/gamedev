@@ -38,7 +38,7 @@ public:
     virtual std::string initialize(std::string_view config) = 0;
     /// pool event from input queue
     /// return true if event was written
-    virtual bool read_input(event& e) = 0;
+    virtual bool poll_event(event& e) = 0;
     virtual void uninitialize() = 0;
 };
 }

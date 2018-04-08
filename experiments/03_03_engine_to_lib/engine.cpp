@@ -108,7 +108,7 @@ public:
 
         SDL_Window* const window = SDL_CreateWindow(
             "Microengine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480,
-            ::SDL_WINDOW_OPENGL);
+            ::SDL_WINDOW_RESIZABLE);
 
         if (window == nullptr) {
             const char* err_message = SDL_GetError();
@@ -120,7 +120,7 @@ public:
         return "";
     }
     /// pool event from input queue
-    bool read_input(event& e) final
+    bool poll_event(event& e) final
     {
         using namespace std;
         // collect all events from SDL
