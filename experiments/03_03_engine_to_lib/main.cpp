@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
         if (argc > 1) {
             cout << "Force escape from main loop. Are you launching inside CI container?" << endl;
             exitcode = cout.good() ? EXIT_SUCCESS : EXIT_FAILURE;
+            ingame = false;
         }
     }
 
