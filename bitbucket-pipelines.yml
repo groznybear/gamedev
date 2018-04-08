@@ -13,8 +13,6 @@ pipelines:
             - mkdir build && cd build
             - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_03_engine_to_lib
             - make -j 4
-            - ./microengine_linux 1 # pass the parameter to force-escape from the main game loop
-            - chmod +x microengine_linux
             - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./microengine_linux" # upload
  
             - git clean -df
