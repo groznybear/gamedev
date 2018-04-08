@@ -1,4 +1,4 @@
-image: gcc:7.2
+image: leanid/fedora26
 
 pipelines:
   custom: # Let's make it runs manually only...
