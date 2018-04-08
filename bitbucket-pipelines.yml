@@ -5,9 +5,9 @@ pipelines:
     manual:
       - step:
           script:
-            - apt-get update # update repo indeces
-            - apt-get install -y cmake # install cmake
-            - apt-get install -y libsdl2-dev
+            # - apt-get update # update repo indeces
+            # - apt-get install -y cmake # install cmake
+            # - apt-get install -y libsdl2-dev
             
             - git clean -df
             - mkdir build && cd build
