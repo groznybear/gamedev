@@ -15,8 +15,7 @@
 
 int main(int argc)
 {
-    std::unique_ptr<me::engine, void (*)(me::engine*)> engine(
-        me::create_engine(), me::destroy_engine);
+    std::unique_ptr<me::engine, void (*)(me::engine*)> engine(me::create_engine(), me::destroy_engine);
 
     std::string err = engine->initialize("");
     if (!err.empty()) {
