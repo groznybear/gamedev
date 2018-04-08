@@ -39,6 +39,8 @@ public:
     /// pool event from input queue
     /// return true if event was written
     virtual bool poll_event(event& e) = 0;
+    virtual void render() = 0;
+    virtual void swap() = 0;
     virtual void uninitialize() = 0;
 };
 }

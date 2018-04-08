@@ -9,6 +9,8 @@
 #include <vector>
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
+
 namespace me {
 
 static std::array<std::string_view, 17> event_names = {
@@ -20,6 +22,11 @@ static std::array<std::string_view, 17> event_names = {
         "button2_released",
         /// virtual console events
         "turn_off" }
+};
+
+struct GLVersion {
+    int gl_major;
+    int gl_minor;
 };
 
 std::ostream& operator<<(std::ostream& stream, const event e)
@@ -34,7 +41,13 @@ std::ostream& operator<<(std::ostream& stream, const event e)
         throw std::runtime_error("too big event value");
     }
 }
-
+std::ostream& operator<<(std::ostream& stream, const GLVersion v)
+{
+    stream << v.gl_major;
+    stream << ".";
+    stream << v.gl_minor;
+    return stream;
+}
 static std::ostream& operator<<(std::ostream& out, const SDL_version& v)
 {
     out << static_cast<int>(v.major) << '.';
@@ -82,7 +95,7 @@ class engine_impl final : public engine {
 public:
     /// create main window
     /// on success return empty string
-    std::string initialize(std::string_view /*config*/) final
+    std::string initialize(std::string_view config) final
     {
         using namespace std;
 
@@ -106,9 +119,17 @@ public:
             return serr.str();
         }
 
-        SDL_Window* const window = SDL_CreateWindow(
-            "Microengine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480,
-            ::SDL_WINDOW_RESIZABLE);
+        if (!config.empty()) {
+            std::cout << "Configuration string was provided to indicate CI launch. Escape..." << endl;
+            return "";
+        }
+
+        window = SDL_CreateWindow(
+            "Microengine",
+            SDL_WINDOWPOS_CENTERED,
+            SDL_WINDOWPOS_CENTERED,
+            640, 480,
+            ::SDL_WINDOW_RESIZABLE | ::SDL_WINDOW_OPENGL);
 
         if (window == nullptr) {
             const char* err_message = SDL_GetError();
@@ -117,7 +138,44 @@ public:
             SDL_Quit();
             return serr.str();
         }
+
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+        SDL_GLContext context = SDL_GL_CreateContext(window);
+        if (context == NULL) {
+        	std::string err = "Error: OpenGL not created";
+            cerr << err << endl;
+            return err;
+        }
+        GLVersion version;
+        int result = SDL_GL_GetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, &version.gl_major);
+        assert(result == 0);
+
+        result = SDL_GL_GetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, &version.gl_minor);
+        assert(result == 0);
+
+        if (version.gl_major <= 2 && version.gl_minor < 1) {
+            cerr << "OpenGL version is too low: " << version << endl;
+            return "OpenGL version is too low";
+        }
+
+        cout << "OpenGL version: " << version << endl;
+
         return "";
+    }
+    /// main render function
+    void render() final
+    {
+        glClearColor(0.637f, 0.3f, 0.4f, 0);
+        glClear(GL_COLOR_BUFFER_BIT);
+    }
+    /// swapping buffers
+    void swap() final
+    {
+        SDL_GL_SwapWindow(window);
     }
     /// pool event from input queue
     bool poll_event(event& e) final
@@ -146,6 +204,9 @@ public:
         return false;
     }
     void uninitialize() final {}
+
+private:
+    SDL_Window* window = nullptr;
 };
 
 static bool already_exist = false;

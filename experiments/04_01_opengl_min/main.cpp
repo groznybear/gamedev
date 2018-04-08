@@ -21,14 +21,24 @@ int main(int argc, char* argv[])
 
     unique_ptr<me::engine, void (*)(me::engine*)> engine(me::create_engine(), me::destroy_engine);
 
-    string initMsg = engine->initialize("");
+    string initMsg = engine->initialize(argc > 1 ? argv[1] : "");
+
     int exitcode = initMsg.empty() ? EXIT_SUCCESS : EXIT_FAILURE;
+
     if (!initMsg.empty()) {
         cout << "Engine initialization failed, reason: " << initMsg << endl;
         return exitcode;
     }
+
     bool ingame = true;
     while (ingame) {
+        if (argc > 1) {
+            cout << "Force escape from main loop." << endl;
+            exitcode = cout.good() ? EXIT_SUCCESS : EXIT_FAILURE;
+            ingame = false;
+            break;
+        }
+
         me::event event;
         while (engine->poll_event(event)) {
             cout << "Handling event: " << event << endl;
@@ -41,11 +51,8 @@ int main(int argc, char* argv[])
             }
         }
 
-        if (argc > 1) {
-            cout << "Force escape from main loop. Are you launching inside CI container?" << endl;
-            exitcode = cout.good() ? EXIT_SUCCESS : EXIT_FAILURE;
-            ingame = false;
-        }
+        engine->render();
+        engine->swap();
     }
 
     engine->uninitialize();

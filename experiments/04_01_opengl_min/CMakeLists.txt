@@ -45,6 +45,11 @@ target_compile_features(engine_lib
 # Linking SDL2 to engine lib
 target_link_libraries(engine_lib ${SDL2_LIB})
 
+find_package(OpenGL REQUIRED)
+if(OPENGL_FOUND)
+message(STATUS "OPENGL :: OK")
+target_link_libraries(engine_lib ${OPENGL_INCLUDE_DIR})
+endif()
 # Linking engine lib to main "game" file
 add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} engine_lib)
