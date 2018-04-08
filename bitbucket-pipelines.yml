@@ -11,7 +11,7 @@ pipelines:
             
             - git clean -df
             - mkdir build && cd build
-            - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/03_03_engine_to_lib
+            - cmake -DCMAKE_BUILD_TYPE=Release ../experiments/04_01_opengl_min
             - make -j 4
             - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./microengine_linux" # upload
  
