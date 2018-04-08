@@ -1,4 +1,4 @@
-[![build-status](https://img.shields.io/bitbucket/pipelines/atlassian/adf-builder-javascript/GroznyBear/gamedev/master.svg)](https://bitbucket.org/GroznyBear/gamedev/addon/pipelines/home) **Linux**
+[![build-status](https://img.shields.io/bitbucket/pipelines/atlassian/adf-builder-javascript/task/SECO-2168.svg)](https://bitbucket.org/GroznyBear/gamedev/addon/pipelines/home) **Linux**
 
 [![Build Status](https://travis-ci.org/groznybear/gamedev.svg?branch=master)](https://travis-ci.org/groznybear/gamedev) **OSX**
  
