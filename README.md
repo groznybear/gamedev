@@ -17,8 +17,8 @@ This project will be writen, - mostly, - in C++.
 Using Terminal window, perform next commands:
 >	- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 >	- brew update
->	- brew install gcc@7.2
->	- brew install cmake@3.7
+>	- brew install gcc@7
+>	- brew install cmake
 >	- brew install make
 
 Ensure everything is installed:
