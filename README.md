@@ -11,13 +11,13 @@ This project will be writen, - mostly, - in C++.
 - Static linking doesn't work properly
 
 # Progress
-- [~~Hello Eclipse~~](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/01_01_eclipse/?at=master) **Ok**
-- [~~Hello Eclipse using lib~~](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/01_02_make_lib/?at=master) **Ok**
-- [~~Dynamic linking to SDL2 lib~~](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/02_01_sdl_dynamic/?at=master) **Ok**
-- [Static linking to SDL2 lib](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/02_02_sdl_static/?at=master) ~~Ok~~
-- [**Main loop**](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/03_01_main_loop/?at=master)
-- [**Main loop to Engine**](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/03_02_main_loop_to_engine/?at=master)
-- [**Engine to lib**](https://bitbucket.org/GroznyBear/gamedev/src/717bfe2123eba04975854137f70afe5d6b409b6f/experiments/03_03_engine_to_lib/?at=master)
+- [~~Hello Eclipse~~](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/01_01_eclipse/?at=master) **Ok**
+- [~~Hello Eclipse using lib~~](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/01_02_make_lib/?at=master) **Ok**
+- [~~Dynamic linking to SDL2 lib~~](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/02_01_sdl_dynamic/?at=master) **Ok**
+- [Static linking to SDL2 lib](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/02_02_sdl_static/?at=master) ~~Ok~~
+- [**Main loop**](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/03_01_main_loop/?at=master)
+- [**Main loop to Engine**](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/03_02_main_loop_to_engine/?at=master)
+- [**Engine to lib**](https://bitbucket.org/GroznyBear/gamedev/src/cebd835f970e7c30167e81f48bcab090d7076c60/experiments/03_03_engine_to_lib/?at=master)
 
 # Dependencies
 - gcc@7.2
