@@ -28,11 +28,11 @@ endif()
 elseif(UNIX)
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 find_library(SDL2_LIB
-             libSDL2d.dylib
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 find_library(SDL2_LIB
-             libSDL2.dylib
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
 
