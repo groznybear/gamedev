@@ -12,9 +12,12 @@ pipelines:
             - git clean -df
             
             - yum -y install gzip
+            - yum -y install libsdl2-dev
+            
             - mkdir build && cd build
             - cmake ../experiments/04_01_opengl_min
             - make -j 4
+            - gzip -h
             - gzip -k -9 -N microengine_linux
             - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./microengine_linux.gz" # upload
  
