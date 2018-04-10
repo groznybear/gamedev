@@ -14,26 +14,24 @@ if(CMAKE_BUILD_TYPE STREQUAL "")
 set(CMAKE_BUILD_TYPE "Release")
 endif()
 
-if(APPLE)
-# I can't figure out how to use "common" name for SDL2 lib, so looking for exact names
+if(APPLE) #SDL2
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 find_library(SDL2_LIB
-             libSDL2d.dylib
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 find_library(SDL2_LIB
-             libSDL2.dylib
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
-
-elseif(UNIX)
+elseif(UNIX) #SDL2
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 find_library(SDL2_LIB
-             libSDL2d.so
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 find_library(SDL2_LIB
-             libSDL2.so
+             NAMES SDL2
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
 
@@ -49,7 +47,7 @@ target_compile_features(engine_lib
                         PUBLIC cxx_std_17)
 # Linking SDL2 to engine lib
 
-if(APPLE)
+if(APPLE) #OpenGL
 target_link_libraries(engine_lib ${SDL2_LIB})
 find_package(OpenGL REQUIRED)
 if(OPENGL_FOUND)
