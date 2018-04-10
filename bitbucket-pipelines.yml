@@ -11,7 +11,7 @@ pipelines:
             
             - git clean -df
             
-            - apt-get install -y gzip
+            - yum -y install gzip
             - mkdir build && cd build
             - cmake ../experiments/04_01_opengl_min
             - make -j 4
