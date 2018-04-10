@@ -10,6 +10,11 @@ endif()
 
 set(CMAKE_CXX_FLAGS "-std=c++17")
 
+if(CMAKE_BUILD_TYPE STREQUAL "")
+set(CMAKE_BUILD_TYPE "Release")
+message(STATUS "Build type ${CMAKE_BUILD_TYPE}")
+endif()
+
 if(APPLE)
 # I can't figure out how to use "common" name for SDL2 lib, so looking for exact names
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -24,15 +29,15 @@ endif()
 elseif(UNIX)
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 find_library(SDL2_LIB
-             libSDL2d.so
+             libSDL2d.dylib
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 find_library(SDL2_LIB
-             libSDL2.so
+             libSDL2.dylib
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
-endif(APPLE)
 
+endif(APPLE)
 # If SDL2 was not found, there no reason to continue
 if(NOT SDL2_LIB)
 message(FATAL_ERROR "SDL2 lib was not found. Abort...")
