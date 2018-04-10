@@ -13,7 +13,7 @@ script:
  
  - mkdir build && cd build
  - cmake ${SOURCE_FOLDER_PATH}/04_01_opengl_min
- - make -j 4
+ - make -j 2
  - ./${OSX_EXEC_NAME} 1 # pass the parameter to force-escape from the main game loop
  - chmod +x ${OSX_EXEC_NAME}
  - gzip -k -9 -N ${OSX_EXEC_NAME}
