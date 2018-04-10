@@ -12,7 +12,6 @@ set(CMAKE_CXX_FLAGS "-std=c++17")
 
 if(CMAKE_BUILD_TYPE STREQUAL "")
 set(CMAKE_BUILD_TYPE "Release")
-message(STATUS "Build type ${CMAKE_BUILD_TYPE}")
 endif()
 
 if(APPLE)

@@ -12,11 +12,11 @@ script:
  - git clean -df
  
  - mkdir build && cd build
- - cmake ../experiments/04_01_opengl_min
+ - cmake ${SOURCE_FOLDER_PATH}/04_01_opengl_min
  - make -j 4
- - ./microengine_osx 1 # pass the parameter to force-escape from the main game loop
- - chmod +x microengine_osx
- - gzip -k -9 -N microengine_osx
- - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./microengine_osx.gz" # upload
+ - ./${OSX_EXEC_NAME} 1 # pass the parameter to force-escape from the main game loop
+ - chmod +x ${OSX_EXEC_NAME}
+ - gzip -k -9 -N ${OSX_EXEC_NAME}
+ - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"./${OSX_EXEC_NAME}" # upload
  
  - git clean -df
