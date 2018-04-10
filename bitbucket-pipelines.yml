@@ -12,7 +12,7 @@ pipelines:
             - git clean -df
             
             - yum -y install gzip
-            - yum -y install libsdl2-dev
+            - yum -y install SDL2-devel
             
             - mkdir build && cd build
             - cmake ../experiments/04_01_opengl_min
