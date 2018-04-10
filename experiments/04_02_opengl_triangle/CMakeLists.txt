@@ -25,14 +25,15 @@ find_library(SDL2_LIB
              libSDL2.dylib
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
+
 elseif(UNIX)
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 find_library(SDL2_LIB
-             libSDL2d.dylib
+             libSDL2d.so
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
 find_library(SDL2_LIB
-             libSDL2.dylib
+             libSDL2.so
              HINTS CMAKE_SYSTEM_LIBRARY_PATH)
 endif()
 
